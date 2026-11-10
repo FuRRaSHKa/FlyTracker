@@ -1,12 +1,8 @@
+using FlyTracker.Models;
 using Microsoft.Data.Sqlite;
 using System.IO;
 
-namespace FlyTracker;
-
-public record Flight(long Id, string Pilot, long Start, long? End, string Title, string Note)
-{
-    public string Caption => $"{DateTimeOffset.FromUnixTimeSeconds(Start):dd.MM HH:mm}  ·  {Title}";
-}
+namespace FlyTracker.Persistence;
 
 public sealed class FlightStore
 {
